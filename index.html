@@ -7,7 +7,7 @@
          <link href="style.css" rel="stylesheet" />
         <title>Blog</title>
     </head>
-    <body>
+    <body class="bg-dark bg-gradient" style="--bs-bg-opacity: 0.3;">
         <div class="container">
             <header class="row border-bottom">
                 <div class="col pt-3 pb-2">
@@ -31,7 +31,6 @@
                 var d = select("#aqui");
                 d.mousePressed(artemania);
                 createCanvas(windowWidth, windowHeight).position(0, 0).style("z-index", -1);
-                background(240);
                 elColor = createColorPicker("#777777").parent("controles");
                 elSlider = createSlider(1, 5, 3).parent("controles");
             }
