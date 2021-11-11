@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300&family=Kalam:wght@700&display=swap');
+body {
+	background-color: rgb(13, 13, 13);
+}
+
+h1,h2,h4,h5,h6{
+	font-weight: 700;
+	color: #0dcaf0;
+	font-family: 'Kalam', cursive;
+}
+
+h1{
+	color: #fff;
+	font-family: 'Alegreya Sans', sans-serif;
+}
+
+p {
+	color: #fff;
+	font-family: 'Alegreya Sans', sans-serif;
+}
+
