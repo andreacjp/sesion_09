@@ -25,23 +25,6 @@
                 </div>
             </footer>
         </div>
-        <script>
-            fetch("https://sheet.best/api/sheets/85aa8093-1945-4d10-99ae-fdf1b1158467")
-                .then((response) => response.json())
-                .then((datos) => {
-                    console.log(datos);
-                    var aqui = document.getElementsByTagName("main")[0];
-                    datos.reverse();
-                    datos.forEach((d) => {
-                        //el siguiente truco es necesario para desarmar una URL y crear otra
-                        foto_id = d.foto.split("=").pop();
-                        foto_util = "https://drive.google.com/uc?export=view&id=" + foto_id;
-                        //con lo que sigue creamos los "post" de nuestro "blog"
-                        aqui.innerHTML += '<div class="col-md-8 mx-auto mb-5"><h2>' + d.titulo + '</h2><img src="' + foto_util + '" class="w-50 mx-auto my-3 shadow"><p class="lead">' + d.fecha + "</p><p>" + d.historia + "</p></div>";
-                    });
-                })
-                .catch((error) => console.log("¡PLW!", error));
-        </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
         <script>
             function setup() {
@@ -64,5 +47,23 @@
                 saveCanvas("recuerdo", "jpg");
             }
         </script>
+        <script>
+            fetch("https://sheet.best/api/sheets/85aa8093-1945-4d10-99ae-fdf1b1158467")
+                .then((response) => response.json())
+                .then((datos) => {
+                    console.log(datos);
+                    var aqui = document.getElementsByTagName("main")[0];
+                    datos.reverse();
+                    datos.forEach((d) => {
+                        //el siguiente truco es necesario para desarmar una URL y crear otra
+                        foto_id = d.foto.split("=").pop();
+                        foto_util = "https://drive.google.com/uc?export=view&id=" + foto_id;
+                        //con lo que sigue creamos los "post" de nuestro "blog"
+                        aqui.innerHTML += '<div class="col-md-8 mx-auto mb-5"><h2>' + d.titulo + '</h2><img src="' + foto_util + '" class="w-50 mx-auto my-3 shadow"><p class="lead">' + d.fecha + "</p><p>" + d.historia + "</p></div>";
+                    });
+                })
+                .catch((error) => console.log("¡PLW!", error));
+        </script>
+        
     </body>
 </html>
