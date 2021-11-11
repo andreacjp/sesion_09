@@ -16,7 +16,9 @@
             </header>
             <main class="row text-center py-5"></main>
             <footer class="row border-top">
-                <div class="col py-2">
+                <div id="controles"></div>
+                <div id="print"><a href="#" id="aqui">descarga</a></div>
+                <div class="col py-2">                    
                     <p class="d-flex justify-content-between align-items-center small">
                         <a href="https://github.com/andreacjp" class="link-secondary">Andrea Jiménez</a> <a href="https://github.com/profesorfaco/interaccion" class="link-secondary">AUD5V0010</a>
                     </p>
@@ -39,6 +41,28 @@
                     });
                 })
                 .catch((error) => console.log("¡PLW!", error));
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
+        <script>
+            function setup() {
+                var d = select("#aqui");
+                d.mousePressed(artemania);
+                createCanvas(windowWidth, windowHeight).position(0, 0).style("z-index", -1);
+                background(240);
+                elColor = createColorPicker("#777777").parent("controles");
+                elSlider = createSlider(1, 5, 3).parent("controles");
+            }
+            function draw() {
+                stroke(elColor.color());
+                strokeWeight(elSlider.value());
+                if (mouseIsPressed) {
+                    line(pmouseX, pmouseY, mouseX, mouseY);
+                }
+            }
+
+            function artemania() {
+                saveCanvas("recuerdo", "jpg");
+            }
         </script>
     </body>
 </html>
