@@ -20,3 +20,7 @@ a {
 	color: #fff;
 	font-family: 'Nunito Sans', sans-serif;
 }
+
+#body-page {
+	background-image: "img/background.jpg";
+}
