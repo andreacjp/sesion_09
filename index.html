@@ -25,27 +25,6 @@
                 </div>
             </footer>
         </div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
-        <script>
-            function setup() {
-                var d = select("#aqui");
-                d.mousePressed(artemania);
-                createCanvas(windowWidth, windowHeight).position(0, 0).style("z-index", -1);
-                elColor = createColorPicker("#777777").parent("controles");
-                elSlider = createSlider(1, 5, 3).parent("controles");
-            }
-            function draw() {
-                stroke(elColor.color());
-                strokeWeight(elSlider.value());
-                if (mouseIsPressed) {
-                    line(pmouseX, pmouseY, mouseX, mouseY);
-                }
-            }
-
-            function artemania() {
-                saveCanvas("recuerdo", "jpg");
-            }
-        </script>
         <script>
             fetch("https://sheet.best/api/sheets/85aa8093-1945-4d10-99ae-fdf1b1158467")
                 .then((response) => response.json())
