@@ -34,7 +34,7 @@
                         foto_id = d.foto.split("=").pop();
                         foto_util = "https://drive.google.com/uc?export=view&id=" + foto_id;
                         //con lo que sigue creamos los "post" de nuestro "blog"
-                        aqui.innerHTML += '<div class="col-md-4 mb-5"><h2>' + d.titulo + '</h2><img src="' + foto_util + '" class="w-50 mx-auto my-3 shadow"><p><a href="index.html?titular='+d.titulo+'">ver más</a></p></div>';
+                        aqui.innerHTML += '<div class="col-md-4 mb-5"><h2>' + d.titulo + '</h2><img src="' + foto_util + '" class="w-50 mx-auto my-3 shadow"><p><a href="page.html?titular='+d.titulo+'">ver más</a></p></div>';
                     });
                 })
                 .catch((error) => console.log("¡PLW!", error));
