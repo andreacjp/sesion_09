@@ -11,13 +11,11 @@
         <div class="container">
             <header class="row border-bottom">
                 <div class="col pt-3 pb-2">
-                    <h1 class="fs-6 d-flex justify-content-between align-items-center"><span>UN BLOG</span> <span>SCRAPBOOK</span></h1>
+                    <h1 class="fs-6 d-flex justify-content-between align-items-center"><span><a href="blog_varias_paginas.html">&larr; VOLVER ATRÁS</a></span><span>SCRAPBOOK</span></h1>
                 </div>
             </header>
             <main class="row text-center py-5"></main>
             <footer class="row border-top">
-                <div id="controles"></div>
-                <div id="print"><a href="#" id="aqui">descarga</a></div>
                 <div class="col py-2">                    
                     <p class="d-flex justify-content-between align-items-center small">
                         <a href="https://github.com/andreacjp" class="link-secondary">Andrea Jiménez</a> <a href="https://github.com/profesorfaco/interaccion" class="link-secondary">AUD5V0010</a>
@@ -26,6 +24,9 @@
             </footer>
         </div>
         <script>
+            var cual = new URLSearchParams(window.location.search).get("titulo");
+            console.log(cual);
+            
             fetch("https://sheet.best/api/sheets/85aa8093-1945-4d10-99ae-fdf1b1158467")
                 .then((response) => response.json())
                 .then((datos) => {
@@ -33,7 +34,7 @@
                     var aqui = document.getElementsByTagName("main")[0];
                     datos.reverse();
                     datos.forEach((d) => {
-                        //el siguiente truco es necesario para desarmar una URL y crear otra
+                        if(d.titulo == cual){
                         foto_id = d.foto.split("=").pop();
                         foto_util = "https://drive.google.com/uc?export=view&id=" + foto_id;
                         //con lo que sigue creamos los "post" de nuestro "blog"
@@ -41,7 +42,6 @@
                     });
                 })
                 .catch((error) => console.log("¡PLW!", error));
-        </script>
-        
+        </script>    
     </body>
 </html>
