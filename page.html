@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+r<!DOCTYPE html>
 <html lang="es">
     <head>
         <meta charset="utf-8" />
@@ -38,7 +38,7 @@
                         foto_id = d.foto.split("=").pop();
                         foto_util = "https://drive.google.com/uc?export=view&id=" + foto_id;
                         //con lo que sigue creamos los "post" de nuestro "blog"
-                        aqui.innerHTML += '<div class="col-md-8 mx-auto mb-5"><h2>' + d.titulo + '</h2><img src="' + foto_util + '" class="w-50 mx-auto my-3 shadow"><p class="lead">' + d.fecha + "</p><p>" + d.historia + "</p></div>";
+                        aqui.innerHTML += '<div class="col-md-8 mx-auto mb-5"><h2>' + d.titulo + '</h2><img src="' + foto_util + '" class="w-50 mx-auto my-3 shadow"><p class="lead">' + d.lugar + "</p><p>" + d.comentario + "</p></div>";
                     });
                 })
                 .catch((error) => console.log("¡PLW!", error));
